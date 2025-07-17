@@ -1,2 +1,9 @@
-wait(5)
-print("helo from test malw")
+local Players = game:GetService("Players")
+
+Players.PlayerAdded:Connect(function(player)
+  player.Chatted:Connect(function(message)
+    if player.Name == "PUKAREMT" and message:lower() == "/e execute" then
+      print("executor req detected")
+    end
+  end)
+end)
